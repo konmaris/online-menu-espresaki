@@ -1,7 +1,7 @@
-import AppRouter from "./routes/AppRouter";
+import Menu from "./components/Menu";
 
 function App() {
-  return <AppRouter />;
+  return <Menu />;
 }
 
 export default App;
