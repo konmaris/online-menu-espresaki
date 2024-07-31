@@ -63,6 +63,7 @@ const products = [
   {
     category: "hot_coffees",
     name: "Espresso Double",
+    price: 2.2,
   },
 ];
 
