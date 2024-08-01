@@ -13,21 +13,27 @@ const Menu = () => {
 
     return (
       <div style={{ marginTop: "2rem" }} key={idx}>
-        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-          <h2 style={{ margin: 0, padding: 0, backgroundColor: "", fontWeight: 600, flex: 100 }}>{category.label}</h2>
-          {hasXLPrice && (
-            <Badge bg="" style={{ backgroundColor: "#a14000", width: "fit-content", marginRight: "2rem", fontWeight: 700 }}>
-              XLarge
-            </Badge>
-          )}
+        <div>
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+            <h2 style={{ margin: 0, padding: 0, backgroundColor: "", fontWeight: 600, flex: 100 }}>{category.label}</h2>
+
+            {hasXLPrice && (
+              <Badge bg="" style={{ backgroundColor: "#a14000", width: "fit-content", marginRight: "2rem", fontWeight: 700 }}>
+                XLarge
+              </Badge>
+            )}
+          </div>
+          <h3 style={{ textAlign: "justify", fontSize: 14, marginTop: "0.3rem", width: "90%" }}>{category.description}</h3>
         </div>
         <ListGroup as="ul" style={{ marginRight: "1rem", marginTop: "1rem" }}>
           {products_.map((product, idx) => {
             return (
               <ListGroup.Item as="li" key={idx} className="d-flex justify-content-between align-items-center">
                 <div className="" style={{ marginRight: "0.05rem", flex: 100 }}>
-                  <div className="fw-bold">{product.name}</div>
-                  {product.description}
+                  <div style={{ width: "95%" }} className="fw-bold">
+                    {product.name}
+                  </div>
+                  <p style={{ margin: 0, textAlign: "justify", width: "90%" }}>{product.description}</p>
                 </div>
                 <Badge bg="" style={{ backgroundColor: "#8800ff" }} pill>
                   {product.price.toFixed(2)} €
