@@ -349,6 +349,17 @@ const products = [
     name: "Muffin red velvet με μαρμελάδα βερύκοκο",
     price: 2.2,
   },
+  {
+    category: "offers",
+    name: "Με κάθε καφέ της επιλογής σας, ΔΩΡΟ ένα νερό 500ml!",
+    description: "",
+    price: 0,
+  },
+  {
+    category: "offers",
+    name: "1 καφές της επιλογής σας, 1 σαλάτα, 1 cheesecake & 1 νερό 500ml",
+    price: 10.0,
+  },
 ];
 
 export default products;
