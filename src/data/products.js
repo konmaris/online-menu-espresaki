@@ -360,6 +360,24 @@ const products = [
     name: "1 καφές της επιλογής σας, 1 σαλάτα, 1 cheesecake & 1 νερό 500ml",
     price: 10.0,
   },
+  {
+    category: "single_origin",
+    name: "🇪🇹 Ethiopia Murago",
+    description: "Επεξεργασία: Natural Washed, Ποικιλία: Bourbon, Περιοχή: Murago, Υψόμετρο: 1460 m.a.s.l",
+    price: 0.5,
+  },
+  {
+    category: "single_origin",
+    name: "🇸🇻 El Salvador Hermanos Mena",
+    description: "Επεξεργασία: Natural Anaerobic, Ποικιλία: Bourbon, Περιοχή: Apaneca-Ilamatepec, Υψόμετρο: 1370 m.a.s.l",
+    price: 0.5,
+  },
+  {
+    category: "single_origin",
+    name: "🇨🇴 Colombia Tumbaga (Decaffeine)",
+    description: "Επεξεργασία: Sugarcane Water Proccess, Περιοχή: Tolima, Υψόμετρο: 1560 m.a.s.l",
+    price: 0.3,
+  },
 ];
 
 export default products;

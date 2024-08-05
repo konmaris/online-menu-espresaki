@@ -5,6 +5,11 @@ const categories = [
     description: "",
   },
   {
+    name: "single_origin",
+    label: "🌍 Μονοποικιλιακοί",
+    description: "Οι μονοποικιλιακοί καφέδες προέρχονται από μία μόνο ποικιλία καφέ και προσφέρουν μοναδικά αρώματα και γεύσεις. Η χρέωση είναι επιπρόσθετη στην τιμή του καφέ.",
+  },
+  {
     name: "cold_coffees",
     label: "🥤 Κρύοι καφέδες",
     description: "Roasting Warehouse 100% Arabica",

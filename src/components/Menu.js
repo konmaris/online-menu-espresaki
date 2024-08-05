@@ -1,8 +1,9 @@
 import React from "react";
-import { Alert, Badge, Button, ListGroup } from "react-bootstrap";
+import { Alert, Badge, Button, Image, ListGroup } from "react-bootstrap";
 
 import categories from "../data/categories";
 import products from "../data/products";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   const categoriesList = categories.map((category, idx) => {
@@ -33,7 +34,25 @@ const Menu = () => {
                   <div style={{ width: "95%" }} className="fw-bold">
                     {product.name}
                   </div>
-                  <p style={{ margin: 0, textAlign: "justify", width: "90%" }}>{product.description}</p>
+                  {product.category !== "single_origin" && <p style={{ margin: 0, textAlign: "justify", width: "90%" }}>{product.description}</p>}
+                  {product.category === "single_origin" && (
+                    <div style={{ margin: 0, textAlign: "justify", width: "90%" }}>
+                      {
+                        // split description product by "," and map each element to a new paragraph
+                        product.description.split(",").map((desc, idx) => (
+                          <p key={idx} style={{ margin: 0 }}>
+                            {
+                              //split each attribute by ":" and map each element to a new paragraph
+
+                              <span key={idx} style={{ margin: 0 }}>
+                                {<span style={{ fontWeight: 500 }}>{desc.split(":")[0]}</span>}: {desc.split(":")[1]}
+                              </span>
+                            }
+                          </p>
+                        ))
+                      }
+                    </div>
+                  )}
                 </div>
                 {product.price > 0 ? (
                   <Badge bg="" style={{ backgroundColor: "#8800ff" }} pill>
@@ -77,10 +96,21 @@ const Menu = () => {
         </h1> */}
       </div>
       <div style={{ marginLeft: "1rem", marginBottom: "1rem" }}>{categoriesList}</div>
-      <div style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center" }}>
-        <span style={{ fontWeight: 600, fontSize: 14, textAlign: "justify", width: "90%" }}>Oι τιμές του παρόντος τιμοκαταλόγου συμπεριλαμβάνουν τον Φ.Π.Α. σε κάθε προϊόν και ενδέχεται να αλλάξουν ανά πάσα στιγμή χωρίς προειδοποίηση.</span>
+      <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
+        <a href="https://www.e-food.gr/delivery/athina/espresaki-coffee-roasters-6370420" style={{ maxWidth: "150px", width: "25%", height: "25%", padding: 0, margin: 0 }}>
+          <img width="100%" src={process.env.PUBLIC_URL + "/efood-logo.jpg"} alt="efood-logo" />
+        </a>
+        <a href="https://wolt.com/en/grc/athens/restaurant/espresaki-coffee-roasters" style={{ maxWidth: "150px", width: "25%", height: "25%", padding: 0, margin: 0 }}>
+          <img width="100%" src={process.env.PUBLIC_URL + "/wolt-logo.jpg"} alt="wolt-logo" />
+        </a>
+        <a href="https://box.gr/delivery/ano-patisia/espresaki-coffee-roasters" style={{ maxWidth: "150px", width: "25%", height: "25%", padding: 0, margin: 0 }}>
+          <img width="100%" src={process.env.PUBLIC_URL + "/box-logo.jpg"} alt="box-logo" />
+        </a>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center", marginTop: "1rem" }}>
+      <div style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center" }}>
+        <span style={{ fontWeight: 600, fontSize: 14, textAlign: "center  ", width: "90%" }}>Oι τιμές του παρόντος τιμοκαταλόγου συμπεριλαμβάνουν τον Φ.Π.Α. σε κάθε προϊόν και ενδέχεται να αλλάξουν ανά πάσα στιγμή χωρίς προειδοποίηση.</span>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center", marginTop: "1rem", marginBottom: "1rem" }}>
         <span style={{ fontWeight: 600 }}>📍 Στεφάνου Βυζαντίου 11, Άγιος Λουκάς</span>
         <span style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Αθήνα, 111 44</span>
         <span style={{ fontWeight: 800 }}>☎️ Τηλ. καταστήματος:</span>
