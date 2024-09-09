@@ -13,16 +13,21 @@ const products = [
   },
   {
     category: "cold_coffees",
-    name: "Iced Latte",
-    price: 2.6,
-    xl_price: 3.6,
+    name: "Freddo Crema",
+    price: 2.8,
+    xl_price: 3.8,
   },
   {
     category: "cold_coffees",
-    name: "Iced Espresso",
-
-    price: 2.2,
-    xl_price: 3.2,
+    name: "Freddo Flat White",
+    price: 2.3,
+    xl_price: 3.3,
+  },
+  {
+    category: "cold_coffees",
+    name: "Iced Latte",
+    price: 2.6,
+    xl_price: 3.6,
   },
   {
     category: "cold_coffees",
@@ -64,19 +69,22 @@ const products = [
   {
     category: "tortillas",
     name: "Caesar's Paradise",
-    description: "Ψητό κοτόπουλο, τυρί cheddar, καλαμπόκι, μαρούλι & sauce Caesar",
+    description:
+      "Ψητό κοτόπουλο, τυρί cheddar, καλαμπόκι, μαρούλι & sauce Caesar",
     price: 3.3,
   },
   {
     category: "tortillas",
     name: "Alternative",
-    description: "Καπνιστή γαλοπούλα, τυρί gouda, ντομάτα, μαρούλι & κρέμα τυριού",
+    description:
+      "Καπνιστή γαλοπούλα, τυρί gouda, ντομάτα, μαρούλι & κρέμα τυριού",
     price: 3.2,
   },
   {
     category: "tortillas",
     name: "Rockstar",
-    description: "Ψητό κοτόπουλο, καπνιστό μπέικον, τυρί cheddar, καλαμπόκι & μαγιονέζα",
+    description:
+      "Ψητό κοτόπουλο, καπνιστό μπέικον, τυρί cheddar, καλαμπόκι & μαγιονέζα",
     price: 3.6,
   },
   {
@@ -89,42 +97,46 @@ const products = [
     category: "baguettes",
     name: "Harmony",
     description: "Πάριζα, τυρί gouda, ντομάτα, μαρούλι & μαγιονέζα",
-    price: 3.0,
+    price: 3.2,
   },
   {
     category: "baguettes",
     name: "Harmony Light",
     description: "Καπνιστή γαλοπούλα, τυρί gouda, ντομάτα, μαρούλι & μαγιονέζα",
-    price: 3.2,
+    price: 3.3,
   },
   {
     category: "baguettes",
     name: "East Coast",
     description: "Ψητό κοτόπουλο, καπνιστό μπέικον, κρέμα τυριού & ντομάτα",
-    price: 3.4,
+    price: 3.5,
   },
   {
     category: "baguettes",
     name: "Gangsta Life",
-    description: "Ψητό κοτόπουλο, καπνιστό μπέικον, καλαμπόκι, ντομάτα, κρέμα τυριού & μαγιονέζα",
+    description:
+      "Ψητό κοτόπουλο, καπνιστό μπέικον, καλαμπόκι, ντομάτα, κρέμα τυριού & μαγιονέζα",
     price: 3.6,
   },
   {
     category: "salads",
     name: "Caesar's Feast",
-    description: "Μαρούλι iceberg, ψητό κοτόπουλο, flakes παρμεζάνας, κρουτόν, καλαμπόκι & sauce Caesar",
+    description:
+      "Μαρούλι iceberg, ψητό κοτόπουλο, flakes παρμεζάνας, κρουτόν, καλαμπόκι & sauce Caesar",
     price: 5.5,
   },
   {
     category: "salads",
     name: "Italian Sunset",
-    description: "Μαρούλι iceberg, ρόκα, ντοματίνια βελανίδια, φρέσκια μοτσαρέλα & παρθένο ελαιόλαδο",
+    description:
+      "Μαρούλι iceberg, ρόκα, ντοματίνια βελανίδια, φρέσκια μοτσαρέλα & παρθένο ελαιόλαδο",
     price: 5.5,
   },
   {
     category: "handmade_sweets",
     name: "Banoffee",
-    description: "Βάση απο μπισκότα digestive, κρέμα αλατισμένης καραμέλας γάλακτος, μπανάνα & σαντιγύ",
+    description:
+      "Βάση απο μπισκότα digestive, κρέμα αλατισμένης καραμέλας γάλακτος, μπανάνα & σαντιγύ",
     price: 3.5,
   },
   {
@@ -178,7 +190,7 @@ const products = [
   {
     category: "toasts",
     name: "Τοστ με τυρί",
-    price: 1.6,
+    price: 1.8,
   },
   {
     category: "toasts",
@@ -363,19 +375,22 @@ const products = [
   {
     category: "single_origin",
     name: "🇪🇹 Ethiopia Murago",
-    description: "Επεξεργασία: Natural Washed, Ποικιλία: Bourbon, Περιοχή: Murago, Υψόμετρο: 1460 m.a.s.l",
+    description:
+      "Επεξεργασία: Natural Washed, Ποικιλία: Bourbon, Περιοχή: Murago, Υψόμετρο: 1460 m.a.s.l",
     price: 0.5,
   },
   {
     category: "single_origin",
     name: "🇸🇻 El Salvador Hermanos Mena",
-    description: "Επεξεργασία: Natural Anaerobic, Ποικιλία: Bourbon, Περιοχή: Apaneca-Ilamatepec, Υψόμετρο: 1370 m.a.s.l",
+    description:
+      "Επεξεργασία: Natural Anaerobic, Ποικιλία: Bourbon, Περιοχή: Apaneca-Ilamatepec, Υψόμετρο: 1370 m.a.s.l",
     price: 0.5,
   },
   {
     category: "single_origin",
     name: "🇨🇴 Colombia Tumbaga (Decaffeine)",
-    description: "Επεξεργασία: Sugarcane Water Proccess, Περιοχή: Tolima, Υψόμετρο: 1560 m.a.s.l",
+    description:
+      "Επεξεργασία: Sugarcane Water Proccess, Περιοχή: Tolima, Υψόμετρο: 1560 m.a.s.l",
     price: 0.3,
   },
 ];
