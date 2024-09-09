@@ -165,7 +165,7 @@ const Menu = () => {
           variant="success"
         >
           <Alert.Heading>
-            Delivery καθημερινά από τις <b>07:00</b> έως τις <b>18:30</b> και τη
+            Delivery καθημερινά από τις <b>07:00</b> έως τις <b>19:00</b> και τη
             Κυριακή από τις <b>08:00</b> έως τις <b>19:00</b>.
           </Alert.Heading>
         </Alert>
