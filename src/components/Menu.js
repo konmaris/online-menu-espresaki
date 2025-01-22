@@ -54,7 +54,7 @@ const Menu = () => {
             </div>
             <h3
               style={{
-                textAlign: "justify",
+                textAlign: "",
                 fontSize: 14,
                 marginTop: "0.3rem",
                 width: "90%",
@@ -83,7 +83,7 @@ const Menu = () => {
                         <p
                           style={{
                             margin: 0,
-                            textAlign: "justify",
+                            textAlign: "",
                             width: "90%",
                           }}
                         >
@@ -94,7 +94,7 @@ const Menu = () => {
                         <div
                           style={{
                             margin: 0,
-                            textAlign: "justify",
+                            textAlign: "",
                             width: "90%",
                           }}
                         >
