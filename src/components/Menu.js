@@ -8,129 +8,147 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   const categoriesList = categories.map((category, idx) => {
     const products_ = products.filter(
-      (product) => product.category === category.name
+      (product) => product.category === category.name && product.price >= 0
     );
 
     // check if category's products have xl_price attribute
     const hasXLPrice = products_.some((product) => product.xl_price);
 
-    return (
-      <div style={{ marginTop: "2rem" }} key={idx}>
-        <div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <h2
+    if (products_.length !== 0)
+      return (
+        <div style={{ marginTop: "2rem" }} key={idx}>
+          <div>
+            <div
               style={{
-                margin: 0,
-                padding: 0,
-                backgroundColor: "",
-                fontWeight: 600,
-                flex: 100,
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              {category.label}
-            </h2>
-
-            {hasXLPrice && (
-              <Badge
-                bg=""
+              <h2
                 style={{
-                  backgroundColor: "#a14000",
-                  width: "fit-content",
-                  marginRight: "2rem",
-                  fontWeight: 700,
+                  margin: 0,
+                  padding: 0,
+                  backgroundColor: "",
+                  fontWeight: 600,
+                  flex: 100,
                 }}
               >
-                XLarge
-              </Badge>
-            )}
-          </div>
-          <h3
-            style={{
-              textAlign: "justify",
-              fontSize: 14,
-              marginTop: "0.3rem",
-              width: "90%",
-            }}
-          >
-            {category.description}
-          </h3>
-        </div>
-        <ListGroup as="ul" style={{ marginRight: "1rem", marginTop: "1rem" }}>
-          {products_.map((product, idx) => {
-            return (
-              <ListGroup.Item
-                as="li"
-                key={idx}
-                className="d-flex justify-content-between align-items-center"
-              >
-                <div className="" style={{ marginRight: "0.05rem", flex: 100 }}>
-                  <div style={{ width: "95%" }} className="fw-bold">
-                    {product.name}
-                  </div>
-                  {product.category !== "single_origin" && (
-                    <p
-                      style={{ margin: 0, textAlign: "justify", width: "90%" }}
-                    >
-                      {product.description}
-                    </p>
-                  )}
-                  {product.category === "single_origin" && (
-                    <div
-                      style={{ margin: 0, textAlign: "justify", width: "90%" }}
-                    >
-                      {
-                        // split description product by "," and map each element to a new paragraph
-                        product.description.split(",").map((desc, idx) => (
-                          <p key={idx} style={{ margin: 0 }}>
-                            {
-                              //split each attribute by ":" and map each element to a new paragraph
+                {category.label}
+              </h2>
 
-                              <span key={idx} style={{ margin: 0 }}>
+              {hasXLPrice && (
+                <Badge
+                  bg=""
+                  style={{
+                    backgroundColor: "#a14000",
+                    width: "fit-content",
+                    marginRight: "2rem",
+                    fontWeight: 700,
+                  }}
+                >
+                  XLarge
+                </Badge>
+              )}
+            </div>
+            <h3
+              style={{
+                textAlign: "justify",
+                fontSize: 14,
+                marginTop: "0.3rem",
+                width: "90%",
+              }}
+            >
+              {category.description}
+            </h3>
+          </div>
+          <ListGroup as="ul" style={{ marginRight: "1rem", marginTop: "1rem" }}>
+            {products_.map((product, idx) => {
+              if (product.price >= 0)
+                return (
+                  <ListGroup.Item
+                    as="li"
+                    key={idx}
+                    className="d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      className=""
+                      style={{ marginRight: "0.05rem", flex: 100 }}
+                    >
+                      <div style={{ width: "95%" }} className="fw-bold">
+                        {product.name}
+                      </div>
+                      {product.category !== "single_origin" && (
+                        <p
+                          style={{
+                            margin: 0,
+                            textAlign: "justify",
+                            width: "90%",
+                          }}
+                        >
+                          {product.description}
+                        </p>
+                      )}
+                      {product.category === "single_origin" && (
+                        <div
+                          style={{
+                            margin: 0,
+                            textAlign: "justify",
+                            width: "90%",
+                          }}
+                        >
+                          {
+                            // split description product by "," and map each element to a new paragraph
+                            product.description.split(",").map((desc, idx) => (
+                              <p key={idx} style={{ margin: 0 }}>
                                 {
-                                  <span style={{ fontWeight: 500 }}>
-                                    {desc.split(":")[0]}
+                                  //split each attribute by ":" and map each element to a new paragraph
+
+                                  <span key={idx} style={{ margin: 0 }}>
+                                    {
+                                      <span style={{ fontWeight: 500 }}>
+                                        {desc.split(":")[0]}
+                                      </span>
+                                    }
+                                    : {desc.split(":")[1]}
                                   </span>
                                 }
-                                : {desc.split(":")[1]}
-                              </span>
-                            }
-                          </p>
-                        ))
-                      }
+                              </p>
+                            ))
+                          }
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-                {product.price > 0 ? (
-                  <Badge bg="" style={{ backgroundColor: "#8800ff" }} pill>
-                    {product.price.toFixed(2)} €
-                  </Badge>
-                ) : (
-                  <Badge bg="" style={{ backgroundColor: "#8800ff" }} pill>
-                    FREE
-                  </Badge>
-                )}
-                {product.xl_price && (
-                  <Badge
-                    bg=""
-                    style={{ backgroundColor: "#43007d", marginLeft: "5px" }}
-                    pill
-                  >
-                    {product.xl_price.toFixed(2)} €
-                  </Badge>
-                )}
-              </ListGroup.Item>
-            );
-          })}
-        </ListGroup>
-      </div>
-    );
+                    {product.price > 0 ? (
+                      <Badge bg="" style={{ backgroundColor: "#8800ff" }} pill>
+                        {product.price.toFixed(2)} €
+                      </Badge>
+                    ) : product.price === 0 ? (
+                      <Badge bg="" style={{ backgroundColor: "#8800ff" }} pill>
+                        FREE
+                      </Badge>
+                    ) : (
+                      <></>
+                    )}
+                    {product.xl_price && (
+                      <Badge
+                        bg=""
+                        style={{
+                          backgroundColor: "#43007d",
+                          marginLeft: "5px",
+                        }}
+                        pill
+                      >
+                        {product.xl_price.toFixed(2)} €
+                      </Badge>
+                    )}
+                  </ListGroup.Item>
+                );
+            })}
+          </ListGroup>
+        </div>
+      );
   });
 
   return (
