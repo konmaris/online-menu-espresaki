@@ -83,7 +83,7 @@ const products = [
     name: "Bagel με γαλοπούλα",
     description:
       "Κουλούρι bagel με παπαρουνόσπορο γεμιστό με καπνιστή γαλοπούλα & κρέμα τυριού",
-    price: 3.6,
+    price: 2.8,
   },
   {
     category: "tortillas",
